@@ -1,0 +1,17 @@
+<table>
+	<tr >
+
+		<td> <%= link_to poi.title, poi_path(poi), class:"post-link", id:"map-post-title", 'data-no-turbolink' => true %>  <%= link_to "",
+		"http://maps.google.com/maps?saddr=&daddr=#{poi.latitude},#{poi.longitude}", class:"map-directions-link" %>	
+</td>
+		<td width="18%"><%= link_to User.find(poi.user_id).first_name + " " + User.find(poi.user_id).last_name, user_summary_path(poi.user_id), class:"artist-link"%> </td>
+		
+	</tr>
+	<tr>
+		
+	<tr/>
+	<tr>
+		<td><b>Summary</b> <%= poi.description%> </td>
+		<td>&nbsp;&nbsp;&nbsp;<%= image_tag poi.image.url(:thumbnail), width: "100px", class:"post-image"%></td>
+	</tr>
+</table>

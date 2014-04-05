@@ -1,0 +1,26 @@
+<div class="contant-wrapper-min-width">
+<table id="comment-content">
+	<tr>
+		<td id="comment-image-cell"><%= image_tag comment.get_user_image.url(:thumbnail), width: "150px", class:"post-image" unless comment.get_user_image.url.nil?%></td>
+		<td id="comment-content-cell">
+		<table id="comment-content-table">
+			<tr>
+				<td> <%= link_to '', [comment.poi, comment],
+				method: :delete,
+				data: { confirm: 'Are you sure?'}, id:"delete-comment" unless (current_user.nil? || !(current_user.id == comment.User_id || (current_user.role == "Admin")))  %></td>
+			</tr>
+			<tr>
+				<td><strong> <%= comment.name%> </strong></td>
+			</tr>
+			<tr>
+				<td><strong>Comment:</strong> <%= comment.body %></td>
+			</tr>
+		</table></td>
+		<td width="150px"> <%if comment.approved == true && !comment.image.url.include?("missing")%>
+		<%= image_tag comment.image.url(:thumbnail), width: "150px" , class:"post-image"%>
+		<%end%> </td>
+	</tr>
+</table>
+</div>
+
+<hr />

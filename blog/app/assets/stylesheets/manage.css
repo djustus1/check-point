@@ -1,0 +1,24 @@
+.edit-button {
+	float:right;
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	border-right: 0px;
+	float: left;
+	padding-right: 0px;
+}
+
+#edit{
+	background-image: url('../images/file_edit.png');
+	float: right;
+}
+
+#add-image-button{
+	background-image: url('../images/image_add.png');
+}
+
+#delete{
+	background-image: url('../images/delete.png');
+	float: right;
+}

@@ -1,0 +1,11 @@
+#artist-name-heading{
+	text-align:right;
+}
+
+#artist-content{
+	width:100%;
+	border: solid 3px #3f4c6b;
+	padding:20px;
+	background:#C0C0C0	;	
+	min-width:910px;
+}

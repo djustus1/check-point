@@ -1,0 +1,9 @@
+#edit-content{
+	min-width:910px;
+	padding:30px;
+	background:#C0C0C0	;	
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 2px #3f4c6b;
+}

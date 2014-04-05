@@ -1,0 +1,83 @@
+<br/>
+
+<h1>Sign Up</h1>
+<hr/>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
+
+<div class="contant-wrapper-min-width">
+<table width="100%" id="sign-up-content">
+	<tr>
+		<td>
+		<div>
+			<%= f.label :first_name %>
+			<br />
+			<%= f.text_field :first_name %>
+		</div>
+		<div>
+			<%= f.label :last_name %>
+			<br />
+			<%= f.text_field :last_name %>
+		</div>
+		<br />
+		<div>
+			<%= f.label :email %>
+			<br />
+			<%= f.email_field :email, :autofocus => true %>
+		</div>
+		<br />
+		<div>
+			<%= f.label :password %>
+			<br />
+			<%= f.password_field :password %>
+		</div>
+		<div>
+			<%= f.label :password_confirmation %>
+			<br />
+			<%= f.password_field :password_confirmation %>
+		</div><td><td>
+		<div>
+			<%= f.label :role %>
+			<br />
+			<%= f.select :role, [["POIManager", "POIManager"], ["User", "User"]] %>
+		</div>
+		<br/>
+		<div>
+			<%= f.label :private_web_url %>
+			<br />
+			<%= f.url_field :private_web_url %>
+		</div>
+		<br/>
+		<div>
+			<%= f.label :about_me %>
+			<br />
+			<%= f.text_area :about_me %>
+		</div>
+		<br/>
+		<div id="file_div">
+			<%= f.label :avatar%>
+			<br />
+			<%= f.file_field :avatar%>
+		</div></td>
+
+	</tr>
+	<tr>
+		<td>
+		<div>
+			<br/>
+			<%= f.submit "Sign up" %>
+		</div></td>
+	</tr>
+</table>
+</div>
+
+<hr/>
+<h1>&nbsp;</h1>
+
+<% end %>
+<script>
+	function clearFileInputField(tagId) {
+		document.getElementById(tagId).innerHTML = document.getElementById(tagId).innerHTML;
+	}
+</script>

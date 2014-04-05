@@ -1,0 +1,38 @@
+	
+	<br/>
+	<%= link_to 'Back', poi_path(@poi), class:"button-back"%>
+	<br/>
+	<br/>
+	<h1>Add Image</h1>
+	 <hr/>
+	 
+	<%= render 'form' %>
+	
+	<hr />
+
+<%if @images.any?%>
+<h1>Manage Images</h1>
+<hr/>
+<div class="contant-wrapper-min-width">
+<table width="100%" id="manage-account-content">
+	<tr>
+		<th>Picture</th>
+
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @images.each do |image|%>
+	<tr>
+		<td class="center"><%= image_tag image.poi_image.url(:thumbnail), width: "150px", class:"post-image"%></td>
+
+		<td class="center"><%= button_to 'Delete', image_path(image.id), {:method => :delete, :form_class => "destroy"} %></td>
+
+		<%end%>
+	</tr>
+</table>
+</div>
+<hr/>
+<%end%>
+<h1>&nbsp;</h1>
+<br/>

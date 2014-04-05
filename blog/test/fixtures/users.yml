@@ -1,0 +1,42 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+ryan:
+  first_name: "Ryan"
+  last_name: "Pepin"
+  email: ryan666555@gmail.com
+  role: "Admin"
+  verified: true
+  id: 1
+  encrypted_password: $2a$10$PoBe1MvkoGJsjMVTEjKqgeBUp.xdfzWoiDjBzQhtLAj16NqIa2fOy
+# column: value
+#
+drew: 
+  first_name: "Drew"
+  last_name: "Justus"
+  email: drewsemail@gmail.com
+  role: "POIManager"
+  verified: "true"
+  id: 2
+  encrypted_password: $2a$10$PoBe1MvkoGJsjMVTEjKqgeBUp.xdfzWoiDjBzQhtLAj16NqIa2fOy
+#  column: value
+lowuser:
+  first_name: "Badge"
+  last_name: "Justus"
+  email: drewsnotemail@gmail.com
+  role: "user"
+  verified: false
+  id: 4
+  encrypted_password: $2a$10$PoBe1MvkoGJsjMVTEjKqgeBUp.xdfzWoiDjBzQhtLAj16NqIa2fOy
+  
+poimanager:
+  first_name: "Poi"
+  last_name: "Manager"
+  email: poimanager@gmail.com
+  role: "Poimanager"
+  verified: false
+  encrypted_password: $2a$10$PoBe1MvkoGJsjMVTEjKqgeBUp.xdfzWoiDjBzQhtLAj16NqIa2fOy
+  id: 3

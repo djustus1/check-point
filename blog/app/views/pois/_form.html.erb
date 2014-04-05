@@ -1,0 +1,68 @@
+<%= form_for @poi, :html => {:multipart => true} do |f| %>
+<% if @poi.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@poi.errors.count, "error") %> prohibited
+	this post from being saved:</h2>
+	<ul>
+		<% @poi.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<table id="create-post-content">
+	<tr>
+		<td><h3>Details</h3></td>
+	</tr>
+
+	<tr>
+		<td>
+		<div>
+			<%= f.label :title %>
+			<br>
+			<%= f.text_field :title %>
+		</div>
+		<br />
+		<div>
+			<%= f.label :description %>
+			<br>
+			<%= f.text_area :description, :cols => "50", :rows =>"10" %>
+		</div>
+		<br/>
+		<div id="file_div">
+			<%= f.label :image%>
+			<br />
+			<%= f.file_field :image%>
+
+		</div></td>
+		<td valign="top" width="60%" class="center">
+		<div>
+			<%= f.label :longitude %>
+			<br>
+			<%= f.text_area :longitude, :cols => "5", :rows =>"1" %>
+		</div>
+		<div>
+			<%= f.label :latitude %>
+			<br>
+			<%= f.text_area :latitude, :cols => "5", :rows =>"1" %>
+		</div></td>
+	</tr>
+
+	<tr>
+		<td>
+		<br/>
+		<div>
+			<%= f.submit "Create"%>
+		</div></td>
+	</tr>
+</table>
+
+<% end %>
+<script>
+	function clearFileInputField(tagId) {
+		document.getElementById(tagId).innerHTML = document.getElementById(tagId).innerHTML;
+	}
+</script>

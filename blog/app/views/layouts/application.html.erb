@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head >
+		<title>Check Point</title>
+		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+		<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<link rel="shortcut icon" href="../../../favicon.ico" >
+			<link rel="icon"
+			type="image/png"
+			href="../../../Logo.png" />
+
+	</head>
+	<body>
+		<header class="container">
+
+			<div id=mainnav data-no-turbolink>
+				<%= link_to '', welcome_index_path, class: "menuitem", id:"logo" %>
+				<%= link_to 'Check Point', pois_path, class: "menuitem", id:"name" %>
+
+				<%= link_to 'Artists', manager_summary_path, class: "menuitem", id:"menu_settings" %>
+				<% if user_signed_in? %>
+				<%= link_to 'Account', edit_user_registration_path, class: "menuitem", id:"menu_settings" %>
+				<%= link_to "Log out", destroy_user_session_path, method: :delete , class: "menuitem", id:"menu_Log_out"%>
+				<div class= "menuitem", id="menu_user">
+					<%= current_user.email%>
+				</div>
+				<% else %>
+				<%= link_to "Sign Up", new_user_registration_path, class: "menuitem", id:"menu_sign_up" %>
+				<%= link_to "Log In", new_user_session_path, class: "menuitem", id:"menu_log_in" %>
+				<% end %>
+
+		</header>
+		<div id="wrap">
+			<%= yield %>
+		</div>
+
+	</body>
+</html>

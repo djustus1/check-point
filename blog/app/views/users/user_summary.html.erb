@@ -1,0 +1,54 @@
+<%= stylesheet_link_tag    "manage", media: "all", "data-turbolinks-track" => true %>
+<br />
+<%= link_to 'Back', :back, class:"button-back"%>
+<br />
+<br />
+<h1><%= @user.first_name%> <%= @user.last_name%></h1>
+<hr />
+
+<div class="contant-wrapper-min-width">
+<table id="artist-content">
+	<tr>
+		<td width="25%"> <%= image_tag @user.avatar.url(:thumbnail), width:"250px", class:"post-image"%> </td>
+		<td>
+		<br />
+		<%= @user.about_me%> <br/><br/> <%= link_to @user.private_web_url, @user.private_web_url%> </td>
+	</tr>
+</table>
+</div>
+
+<%if @pois.any?%>
+<hr />
+<h2>Points By Artist</h2>
+<br />
+<div class="contant-wrapper-min-width">
+<table id="index_post_table">
+
+	<% @pois.each do |poi| %>
+	<tr class="posts">
+		<td class="posts" id="post_image"><%= image_tag poi.image.url(:thumbnail), width: "250px", class:"post-image"%></td>
+
+		<td class="posts">
+		<p id="post_title">
+			<%= link_to poi.title, poi_path(poi), class:"post-link" %>
+		</p>
+		<p class="description">
+			<br/>
+			<strong><%= poi.description %></strong>
+			<br/>
+		<p></p>
+		<p>
+			<%= link_to User.find(poi.user_id).first_name + " " + User.find(poi.user_id).last_name, user_summary_path(poi.user_id), class:"artist-link"%>
+		</p></br></td>
+
+		<td class="posts" id="post_map" width="15%"><br> Created:<br/> <%=(poi.created_at.to_formatted_s(:short) )%> <br/><br/> Updated:<br/> <%=poi.updated_at.to_formatted_s(:short)%> <br/><br/><%=(Comment.where("poi_id = ?", poi.id)).count%> comments</td>
+
+		</td>
+	</tr>
+	<% end %>
+</table>
+</div>
+<%end%>
+<hr/>
+<h1>&nbsp;</h1>
+<br/>

@@ -1,0 +1,116 @@
+<%= javascript_include_tag "application" %>
+
+<div class="profile-control-buttons">
+<table>
+	<tr>
+		<td id="control-button-container"> <% if @user.role.casecmp("Admin") == 0 %>
+
+		<%= link_to 'Manage Accounts', users_path, class: "button-link" %>
+		<% end %>
+
+		<% if @user.role.casecmp("POIManager") == 0  || @user.role == "Admin"%>
+		<%= link_to 'Manage Points', home_path(@user), class: "button-link", id: "main_create_point" %>
+
+		<% end %> </td>
+	</tr>
+</table>
+</div>
+
+<h1>Account</h1>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= devise_error_messages! %>
+
+<hr />
+
+<div class="contant-wrapper-min-width">
+	<table id="account-table" width="100%">
+		<tr>
+			<td id="avitar-container"> <%= @user.first_name%> <%= @user.last_name%>
+			<%= @user.role%>
+			<br/>
+			<%= image_tag @user.avatar.url(:thumbnail), class:"post-image", width:"250px"%>
+			<br />
+			<p>
+				<%= f.file_field :avatar%>
+			</p>
+			<p>
+				<%= f.check_box(:avatar_delete)%> <%= f.label :Delete_Avatar?%>
+			</p></td>
+
+			<td id="user-settings"> <%= f.label :first_name %>
+			<br/>
+			<%= f.text_field :first_name, :autocomplete => "off" %>
+			<br/>
+			<%= f.label :last_name %>
+			<br/>
+			<%= f.text_field :last_name, :autocomplete => "off" %>
+			<br/>
+			<br/>
+			<div>
+				<%= f.label :email %>
+				<br />
+				<%= f.email_field :email, :autofocus => true, :disabled => true %>
+			</div> <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+			<div>
+				Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+			</div> <% end %>
+			<%if (current_user.provider.nil?)%>
+			<div>
+				<%= f.label :password %>
+				<br />
+				<%= f.password_field :password, :autocomplete => "off" %>
+			</div>
+			<div>
+				<%= f.label :password_confirmation %>
+				<br />
+				<%= f.password_field :password_confirmation %>
+			</div> </br> </br>
+			<div>
+				<%= f.label :current_password %>
+				<br />
+				<%= f.password_field :current_password %>
+			</div></td>
+			<%end%>
+			<td id="user-info">
+			<div>
+
+				<%= f.label :private_web_url %>
+				<br />
+				<%= f.url_field :private_web_url %>
+				</br>
+
+				<%= f.label :about_me %>
+				<br />
+				<%= f.text_area :about_me, :cols => "30", :rows =>"10" %>
+				<br/>
+				<br/>
+				<%= f.label :requestedRole %>
+				<br />
+				<%= f.select :requestedRole, [[current_user.role, current_user.role],["POIManager", "POIManager"], ["User", "User"], ["Admin", "Admin"]] %>
+
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div id="update-button">
+					<%= f.submit "Update" %>
+				</div>
+				<% end %>
+
+				<%= button_to "Cancel Account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>
+			</td>
+		</tr>
+
+	</table>
+</div>
+
+<script>
+	function clearFileInputField(tagId) {
+		document.getElementById(tagId).innerHTML = document.getElementById(tagId).innerHTML;
+	}
+</script>
+<hr/>
+<h1>&nbsp;</h1>

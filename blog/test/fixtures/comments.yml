@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  poi_id: 1
+  User_id: 1
+  body: "my body"
+  name: "Ryan Pepin"
+  approved: false
+  
+two:
+  poi_id: 1
+  User_id: 2
+  body: "my body"
+  name: "Drew Justus"
+  approved: false
+four:
+  poi_id: 1
+  User_id: 4
+  body: "my body"
+  name: "Drew Justus"
+  approved: false

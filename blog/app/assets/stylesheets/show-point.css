@@ -1,0 +1,131 @@
+#share_buttons {
+	float: right;
+}
+
+#facebook_share {
+	width: 30px;
+	height: 30px;
+	background-image: url('../images/facebook_logo.png');
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	border-right: 0px;
+	float: left;
+	margin-top: 6px;
+	padding-right: 0px;
+}
+
+#google_share {
+	width: 30px;
+	height: 30px;
+	background-image: url('../images/google_logo.png');
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	border-right: 0px;
+	float: left;
+	margin-top: 6px;
+	padding-right: 0px;
+}
+
+#twitter_share {
+	width: 30px;
+	height: 30px;
+	background-image: url('../images/twitter_logo.png');
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	border-right: 0px;
+	float: left;
+	margin-top: 6px;
+	padding-right: 0px;
+}
+
+#email_share {
+	width: 30px;
+	height: 30px;
+	background-image: url('../images/email_logo.png');
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	border-right: 0px;
+	float: left;
+	margin-top: 6px;
+	padding-right: 0px;
+}
+
+#directions-link{
+	width: 20px;
+	height: 25px;
+	background-image: url('../images/directions.png');
+	background-repeat: no-repeat;
+	background-size: 17px 22px;
+	border-right: 0px;
+	float: left;
+	padding-right: 0px;
+}
+
+#customSlider {
+	margin:0px;
+	padding:0px;
+}
+
+#slider-wrapper{
+	padding-left:200px;
+	padding-top:25px;
+	padding-bottom:25px;
+	background:#C0C0C0;	
+	border:solid 3px #3f4c6b;
+	min-width: 710px;
+}
+
+#directions.onpost{
+	width:250px;
+	height:250px;
+	min-width:0px;
+}
+
+img.slideElement.currentSlideElement.alignTop{
+	height: 97%;
+    border: solid 3px #3f4c6b;    
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 3px #3f4c6b;
+}
+
+#rambling-animation{
+	border-right:solid 3px #3f4c6b;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding-bottom: 10px;
+}
+
+.social-share-button{
+	display:inline;
+}
+
+#share-buttons{
+	padding-top:1px;
+	padding-bottom:1px;
+	float:right;
+	display:inline;
+}
+
+#facebook-wrapper{
+	float:right;
+	display:inline;
+}
+
+#social-share{
+	width:100%;
+	min-width:910px;
+}
+
+.map-directions-link{
+	width: 20px;
+	height: 25px;
+	background-image: url('../images/directions.png');
+	background-repeat: no-repeat;
+	background-size: 17px 22px;
+	border-right: 0px;
+	float: right;
+	padding-right: 0px;
+}

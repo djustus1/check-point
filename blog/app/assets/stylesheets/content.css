@@ -1,0 +1,41 @@
+.content{
+	min-height: 200px;
+	min-width: 200px;
+}
+
+.content-wrapper{
+	min-height: 300px;
+	padding-left: 50px;
+}
+
+.content-button-wrapper{
+	vertical-align:bottom;
+}
+
+.content-button{
+	float:right;
+}
+
+#content-button.button-back{
+	float:right;
+}
+
+#content-button-back.button-back{
+	float:right;
+	margin-right:10px;
+}
+
+.content-table{
+	background: #C0C0C0;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 2px #20538D;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#content-image{
+	padding-left: 10px;
+}

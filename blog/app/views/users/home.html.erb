@@ -1,0 +1,64 @@
+
+<% if user_signed_in? %>
+<% if @user.verified%>
+<br/>
+<%= link_to 'Create Point', new_poi_path, id:"manage-create-point", class:"button-link" %>
+<br/>
+<% end %>
+<% end %>
+<br/>
+Welcome <%= @user.first_name %>!
+<br/>
+<h1>Manage Points</h1>
+<hr/>
+
+<div class="contant-wrapper-min-width">
+<table id="index_post_table">
+	<% @pois.each do |poi| %>
+
+	<tr class="posts">
+		<td class="posts" id="post_image" width="20%"><%= image_tag poi.image.url(:thumbnail), class:"post-image", width:"250px"%></td>
+
+		<td class="posts" id="post-content">
+			<table width="100%", height="100%">
+				<tr>
+					<td>
+						<%= link_to '', new_poi_image_path(poi), class: "edit-button", Id:"add-image-button"%>
+						<%= link_to '', edit_poi_path(poi), class: "edit-button", Id:"edit" %> 
+						<%= link_to '', poi_path(poi), class: "edit-button", Id:"delete",
+						method: :delete, data: { confirm: 'Are you sure?' } %>
+					</td>	
+					</tr>
+		
+				<tr>
+					<td>
+						<p id="post_title">
+							<%= link_to poi.title, poi_path(poi), class:"post-link" %>
+						</p>
+						<p class="description">
+						<br/>
+							<strong><%= poi.description %></strong>
+						<br/>
+						</p>
+		
+						<p>
+							<%= link_to User.find(poi.user_id).first_name + " " + User.find(poi.user_id).last_name, user_summary_path(poi.user_id), class:"artist-link"%>
+						</p></br>
+					</td>
+				</tr>
+			</table>
+		</td>
+
+		<td class="posts" id="post_map" width="15%"><br> Created:<br/> <%=(poi.created_at.to_formatted_s(:short) )%> <br/><br/> Updated:<br/> <%=poi.updated_at.to_formatted_s(:short)%> <br/><br/><%=(Comment.where("poi_id = ?", poi.id)).count%> comments</td>
+
+		</td>
+		
+	</tr>
+
+	<% end %>
+</table>
+</div>
+
+<hr/>
+<h1>&nbsp;</h1>
+<br/>

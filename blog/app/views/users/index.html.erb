@@ -1,0 +1,59 @@
+<br/>
+<h1>Manage Accounts</h1>
+<hr/>
+
+<div class="contant-wrapper-min-width">
+	<table width="100%" id="manage-account-content">
+		<tr>
+			<th>Email</th>
+			<th>Role</th>
+			<th>Verified</th>
+			<th>Requested role</th>
+			<th></th>
+		</tr>
+
+		<% @users.each do |user| %>
+		<tr>
+			<td class="center"><%= user.email %></td>
+			<td class="center"><%= user.role %></td>
+			<td class="center"><%= user.verified%></td>
+			<td class="center"><%= user.requestedRole%></td>
+			<td class="center"><%= button_to 'Verify', approve_path(user.id), {:method => :post, :form_class => "approve"} %></td>
+			<td class="center"><%= button_to 'Revoke', revoke_path(user.id), {:method => :post, :form_class => "revoke"} %></td>
+			<td class="center"><%= button_to 'Upgrade', upgrade_path(user.id), {:method => :post, :form_class => "upgrade"} %></td>
+			<td class="center"><%= button_to 'Delete', destroy_path(user.id), {:method => :delete, :form_class => "destroy"} %></td>
+
+		</tr>
+		<% end %>
+
+	</table>
+</div>
+
+<hr/>
+<h1>Manage Pictures</h1>
+<hr/>
+
+<div class="contant-wrapper-min-width">
+<table width="100%" id="manage-account-content">
+	<tr>
+		<th>Picture</th>
+
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @comments.each do |comment|%>
+	<tr>
+		<td class="center"><%= image_tag comment.image.url(:thumbnail), width: "150px", class:"post-image"%></td>
+		<td class="center"><%= comment.body%></td>
+
+		<td class="center"><%= button_to 'Approve', comment_verify_path(comment.id), {:method => :post, :form_class => "approve_comment"} %></td>
+		<td class="center"><%= button_to 'Delete', [comment.poi, comment], {:method => :delete, :form_class => "destroy"} %></td>
+
+		<%end%>
+	</tr>
+</table>
+</div>
+<hr/>
+<h1>&nbsp;</h1>
+<br/>

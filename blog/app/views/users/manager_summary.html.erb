@@ -1,0 +1,28 @@
+<br/>
+<h1>Artists</h1>
+<hr/>
+<div class="contant-wrapper-min-width">
+<table width="100%" id="manage-account-content">
+  <tr>
+    <th id="artist-name-heading">Artist Name</th>
+    <th>Artist Website</th>
+
+  </tr>
+ 
+<% @users.each do |user|	 %>     
+  <tr><%if user.pois.count >= 1 %>
+    <td ><%= link_to User.find(user.id).first_name + " " + User.find(user.id).last_name, user_summary_path(user.id), class:"artist-link"%>
+</td>
+
+    <td class="center"><%= user.private_web_url %></td> 
+
+    </tr>
+<%end%>
+<% end %>
+</table>
+</div>
+
+<hr/>
+<h1>&nbsp;</h1>
+
+<br />

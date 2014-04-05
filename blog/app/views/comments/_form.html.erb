@@ -1,0 +1,11 @@
+<%= form_for([@poi, @poi.comments.build]) do |f| %>
+
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :cols => "50", :rows =>"10"  %>
+  </p>
+  <%= f.file_field :image %>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

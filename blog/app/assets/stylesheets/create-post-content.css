@@ -1,0 +1,15 @@
+#create-post-content{
+	margin:0px;
+	min-width:910px;
+	width:100%;
+	padding:30px;
+	background:#C0C0C0	;	
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 3px #3f4c6b;
+}
+
+.contant-wrapper-min-width{
+	min-width: 910px;
+}
